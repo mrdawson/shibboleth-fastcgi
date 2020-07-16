@@ -12,3 +12,9 @@ services:
       dockerfile: ./configs/centos-7/Dockerfile
     volumes:
       - .:/app
+  centos-8:
+    build:
+      context: .
+      dockerfile: ./configs/centos-8/Dockerfile
+    volumes:
+      - .:/app
