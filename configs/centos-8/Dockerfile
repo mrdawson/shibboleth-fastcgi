@@ -1,4 +1,7 @@
 FROM centos:8
+RUN yum update -y
+RUN yum install -y dnf-plugins-core
+RUN yum config-manager --set-enabled PowerTools
 
 # Install Shibboleth's recommended Service Provider repo as per
 # https://shibboleth.net/downloads/service-provider/RPMS/
@@ -17,7 +20,8 @@ RUN yum install -y \
   rpmdevtools \
   sudo \
   yum-utils \
-  rsync
+  rsync \
+  fcgi
 
 # Make the build area available
 RUN mkdir -p /app/build
